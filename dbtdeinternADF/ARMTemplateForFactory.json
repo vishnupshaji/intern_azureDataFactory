@@ -34,6 +34,10 @@
 		"simpel_proejct_databases_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "vishnu"
+		},
+		"trigger1_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/a34c0e32-e253-4bec-acb6-180dab45b476/resourceGroups/dbtdeintern/providers/Microsoft.Storage/storageAccounts/dbtdeinternstorage1"
 		}
 	},
 	"variables": {
@@ -739,6 +743,36 @@
 				}
 			},
 			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/trigger1')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Stopped",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "simple_pipeline",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					}
+				],
+				"type": "BlobEventsTrigger",
+				"typeProperties": {
+					"blobPathBeginsWith": "/project/blobs/",
+					"ignoreEmptyBlobs": false,
+					"scope": "[parameters('trigger1_properties_typeProperties_scope')]",
+					"events": [
+						"Microsoft.Storage.BlobCreated"
+					]
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/simple_pipeline')]"
+			]
 		}
 	]
 }
