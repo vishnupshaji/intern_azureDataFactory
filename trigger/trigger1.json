@@ -13,7 +13,7 @@
 		],
 		"type": "BlobEventsTrigger",
 		"typeProperties": {
-			"blobPathBeginsWith": "/project/blobs/customer/",
+			"blobPathBeginsWith": "/project/blobs/",
 			"ignoreEmptyBlobs": false,
 			"scope": "/subscriptions/a34c0e32-e253-4bec-acb6-180dab45b476/resourceGroups/dbtdeintern/providers/Microsoft.Storage/storageAccounts/dbtdeinternstorage1",
 			"events": [
