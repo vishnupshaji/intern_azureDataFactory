@@ -1,0 +1,47 @@
+{
+	"name": "customer_json",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "dbtdeintenstorage1",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "sources"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "customer",
+				"container": "project"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"customer_id": {
+					"type": "integer"
+				},
+				"first_name": {
+					"type": "string"
+				},
+				"last_name": {
+					"type": "string"
+				},
+				"email": {
+					"type": "string"
+				},
+				"phone": {
+					"type": "string"
+				},
+				"city": {
+					"type": "string"
+				},
+				"registration_date": {
+					"type": "string"
+				}
+			}
+		}
+	}
+}

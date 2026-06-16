@@ -1,0 +1,39 @@
+{
+	"name": "products_tables",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "simpel_proejct_databases",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "sources"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "product_id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "product_name",
+				"type": "varchar"
+			},
+			{
+				"name": "category",
+				"type": "varchar"
+			},
+			{
+				"name": "price",
+				"type": "decimal",
+				"precision": 10,
+				"scale": 2
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "products"
+		}
+	}
+}

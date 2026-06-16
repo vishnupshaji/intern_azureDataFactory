@@ -1,0 +1,42 @@
+{
+	"name": "products_bronze",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "dbtdeinternstorage2",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "sinks"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "bronze/products",
+				"fileSystem": "project"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "product_id",
+				"type": "INT32"
+			},
+			{
+				"name": "product_name",
+				"type": "UTF8"
+			},
+			{
+				"name": "category",
+				"type": "UTF8"
+			},
+			{
+				"name": "price",
+				"type": "DECIMAL",
+				"precision": 10,
+				"scale": 2
+			}
+		]
+	}
+}
