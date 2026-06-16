@@ -1,0 +1,36 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "dbtdeinternADF"
+		},
+		"dbtdeintenstorage1_connectionString": {
+			"value": ""
+		},
+		"dbtdeinternstorage2_accountKey": {
+			"value": ""
+		},
+		"simpel_proejct_databases_password": {
+			"value": ""
+		},
+		"dbtdeinternstorage2_properties_typeProperties_url": {
+			"value": "https://dbtdeinternstorage2.dfs.core.windows.net/"
+		},
+		"simpel_proejct_databases_properties_typeProperties_server": {
+			"value": "dbtdeintern.database.windows.net"
+		},
+		"simpel_proejct_databases_properties_typeProperties_database": {
+			"value": "dbtdeintern"
+		},
+		"simpel_proejct_databases_properties_typeProperties_userName": {
+			"value": "vishnu"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
